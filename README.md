@@ -11,3 +11,36 @@ sudo gitlab-runner start
 ```
 volumes = ["/var/run/docker.sock:/var/run/docker.sock", "/certs/client", "/cache"]
 ```
+# Gitlab-Runner image pull from Private Registry # CICD Variable
+```
+ printf "my_username:my_password" | openssl base64 -A
+```
+# CICD Variable Name 
+```
+DOCKER_AUTH_CONFIG
+```
+```
+{
+    "auths": {
+        "registry.gitlab.com:5000": {
+            "auth": "bXlfdXNlcm5hbWU6bXlfcGFzc3dvcmQ="
+        }
+    }
+}
+```
+# .gitlab-ci-sample
+```
+image: registry.gitlab.com/tdc4/environment-images:latest
+services:
+  - docker:19.03-dind
+stages:
+  - mirror
+before_script:
+  - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+mirror:
+  stage: mirror
+  tags: 
+    - internet
+  script:
+  - echo "abc"
+```
