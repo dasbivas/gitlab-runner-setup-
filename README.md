@@ -45,3 +45,8 @@ mirror:
   script:
   - echo "abc"
 ```
+# Personal token
+```
+glpat-nztNsQeQWCaEuJ6cZWWJ
+```
+```
