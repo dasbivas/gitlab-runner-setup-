@@ -45,8 +45,11 @@ mirror:
   script:
   - echo "abc"
 ```
-# Personal token
+# Personal token for Gitlab
 ```
 glpat-nztNsQeQWCaEuJ6cZWWJ
 ```
+# # Personal token for Github
+```
+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
 ```
