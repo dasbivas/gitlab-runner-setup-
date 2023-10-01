@@ -1,5 +1,6 @@
 # Gitlab-Runner for Ubuntu
 ```
+apt-get update -y
 apt install docker.io -y
 sudo curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
 sudo chmod +x /usr/local/bin/gitlab-runner
